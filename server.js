@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -6,8 +7,7 @@ const userRoute = require("./routes/users");
 const stripeRoute = require("./routes/stripe");
 const app = express();
 const PORT = process.env.PORT || 5000;
-const mongoURI = 'mongodb+srv://ShibiDhurga:20June2003@cluster0.gv5fqam.mongodb.net/Flights?retryWrites=true&w=majority';
-
+const mongoURI =process.env.MONGO_URL;
 app.use(express.json());
 app.use(cors());
 
